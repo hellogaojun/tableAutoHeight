@@ -25,7 +25,7 @@
     // Do any additional setup after loading the view from its nib.
     
     self.navigationItem.title = @"Cell Auto Height";
-    self.titles = @[@"Masonry",@"Xib",@"PureLayout"];
+    self.titles = @[@"Xib",@"Masonry",@"PureLayout"];
     self.controllers = @[[XibController new],[ViewController new],[PureLayoutController new]];
 }
 
@@ -35,8 +35,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellId = @"cell1";
+    static NSString *cellId = @"cellExample";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+    }
     cell.textLabel.text = self.titles[indexPath.row];
     return cell;
 }

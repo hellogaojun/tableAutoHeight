@@ -13,4 +13,6 @@
 
 @property (nonatomic, copy) NSString *subTitle;
 
++ (NSArray *)dataList;
+
 @end

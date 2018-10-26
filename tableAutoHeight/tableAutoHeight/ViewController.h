@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+///对应Masonry autoLayout
 @interface ViewController : UIViewController
 
 
